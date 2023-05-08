@@ -17,6 +17,38 @@ Route::get('/', function () {
 
     $user = 'Domenico Lucarelli';
 
+    $headerEl = ['home','contact','where', 'who',];
 
-    return view('home', compact('user'));
-});
+
+    return view('home', compact('user', 'headerEl'));
+})->name('home');
+
+Route::get('/contact', function () {
+
+    $title = 'Contact';
+
+    $headerEl = ['home','contact','where', 'who',];
+
+
+    return view('where', compact('title', 'headerEl'));
+})->name('contact');
+
+Route::get('/where', function () {
+
+    $title = 'Where';
+
+    $headerEl = ['home','contact','where', 'who',];
+
+
+    return view('where', compact('title', 'headerEl'));
+})->name('where');
+
+Route::get('/who', function () {
+
+    $title = 'Who';
+
+    $headerEl = ['home','contact','where', 'who',];
+
+
+    return view('who', compact('title', 'headerEl'));
+})->name('who');
